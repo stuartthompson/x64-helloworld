@@ -9,7 +9,7 @@ _start:
     mov ebx, 1                  ; file descriptor stdout
     mov ecx, greeting           ; message
     ; [len] vs len because we want value not address
-    mov edx, [len]              ; message length
+    mov edx, dword [len]        ; message length
     int 0x80                    ; syscall write
 
     ; Exit with return code 0
