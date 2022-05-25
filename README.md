@@ -3,12 +3,12 @@
 ## Building and Running
 Assemble object files and include debug symbols.
 ```
-nasm -F dwarf -g -f elf32 helloworld.asm
+nasm -F dwarf -g -f elf64 helloworld.asm
 ```
 
 Link the object files into an executable
 ```
-ld -m elf_i386 -o helloworld helloworld.o
+ld -m elf_x86_64 -o helloworld helloworld.o
 ```
 
 Run the application
@@ -33,10 +33,13 @@ Type the following commands into gdb
 break 11
 run
 stepi
-stepi
-stepi
 continue
 ```
 
 This will execute the program and let you inspect the state of the program as 
 it is running.
+
+The breakpoint set at line 11 is right before the syscall to write the greeting
+to stdout.
+
+Stepping one instruction lets you observe Hello, World! being written.

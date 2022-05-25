@@ -1,0 +1,7 @@
+# Git Ignore File
+#
+# Add patterns here to instruct git to ignore files.
+
+# Object and Executable Files
+helloworld.o
+helloworld
